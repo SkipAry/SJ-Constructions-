@@ -1,6 +1,9 @@
 /* Readability and responsive layout: shared type scale, then content-led breakpoints. */
 :root{--muted:#505d72;--body-size:clamp(1.0625rem,1rem + .18vw,1.1875rem)}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+/* Keep the page stationary behind project details without a width jump. */
+html{scrollbar-gutter:stable}
+html:has(dialog[open]){overflow:hidden}
 body{font-size:var(--body-size);line-height:1.7}
 h2{font-size:clamp(2.125rem,4.8vw,4.5rem);line-height:1.12;letter-spacing:-.035em;overflow-wrap:anywhere}
 h3{line-height:1.3;overflow-wrap:anywhere}

@@ -33,7 +33,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <header class="header"><a class="brand" href="#home" aria-label="SJ Constructions home"><span class="brand-mark">SJ<span>▰</span></span><span>CONSTRUCTIONS<small>BUILDING TRUST SINCE 2016</small></span></a><nav id="navigation" aria-label="Main navigation"><a href="#about">About us</a><a href="#services">Our expertise</a><a href="#projects">Projects</a><a href="#fleet">Our fleet</a></nav><a class="nav-cta" href="#contact">Let’s build together ${arrow}</a><button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation"><span></span><span></span></button></header>
 <main id="main">
 <section class="hero cinema-hero" id="home" aria-labelledby="hero-heading">
- <div class="hero-cinema"><video class="autoplay-film" autoplay muted loop playsinline preload="auto" poster="/assets/hero-background.webp" aria-label="Construction background video"><source src="/assets/hero-background.mp4" type="video/mp4"/></video><button class="video-toggle" aria-label="Pause construction background video">Ⅱ</button></div>
+ <div class="hero-cinema"><video class="autoplay-film" muted loop playsinline preload="none" poster="/assets/hero-background.webp" aria-label="Construction background video"><source data-src="/assets/hero-background.mp4" type="video/mp4"/></video><button class="video-toggle" aria-label="Pause construction background video">Ⅱ</button></div>
  <div class="cinema-content"><p class="eyebrow">Construction & Excavation · Since 2016</p><h1 id="hero-heading">Solid Foundations. <br><span>Lasting Progress.</span></h1><p class="cinema-description">From the first excavation to the final structure, we bring the people, equipment and commitment your project needs.</p><div class="hero-actions"><a class="button" href="#contact">Discuss your project ${arrow}</a><a class="hero-secondary" href="#projects">Explore our work <span aria-hidden="true">↓</span></a></div></div>
  <div class="cinema-footer"><div><span>Based in</span><strong>Pune & Ahmednagar</strong></div><p>Excavation <span> / </span> Infrastructure <span> / </span> Civil works</p><a href="#about" aria-label="Discover SJ Constructions">Discover SJ <span aria-hidden="true">↓</span></a></div>
 </section>
@@ -42,7 +42,7 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
 <section class="numbers"><div class="numbers-heading reveal"><p class="eyebrow">The Portfolio In Numbers</p><h2>Measured In Progress.</h2></div><div class="stats"><div><strong>₹${portfolioValue.toFixed(2)}<small> Cr</small></strong><span>Total portfolio value</span></div><div><strong>${projects.length}</strong><span>Projects in the profile</span></div><div><strong>${averageCompletion}%</strong><span>Average completion</span></div><div><strong>${advancedProjects}<small> / 5</small></strong><span>At or above 80%</span></div></div><p class="snapshot-note">Company-profile snapshot · Completion is an unweighted average across five projects.</p></section>
 <section class="project-section section" id="projects"><div class="section-heading reveal"><div><p class="eyebrow">Commitment You Can See</p><h2>ONGOING PROJECTS. <br><em>VISIBLE PROGRESS.</em></h2></div><a class="text-link" href="/assets/company-profile.pdf" target="_blank" rel="noopener">Company profile <span>↓</span></a></div><p class="portfolio-intro">Metro infrastructure, irrigation and commercial developments across Maharashtra and Gujarat. Every project below covers excavation work.</p><div class="project-dashboard"><div class="chart-heading"><div><p class="eyebrow">Completion Status</p><h3>Every Milestone, At A Glance.</h3></div><div class="chart-switch" role="group" aria-label="Chart metric"><button data-metric="completion" aria-pressed="true">Completion %</button><button data-metric="value" aria-pressed="false">Value ₹ Cr</button></div></div><div id="progress-chart" aria-live="polite"></div><p class="data-note">Figures reproduced from the supplied profile, not a live project feed. Swargate is listed at 100% within the brochure’s ongoing portfolio.</p></div><div class="project-table-wrap" role="region" aria-label="Detailed project portfolio" tabindex="0"><table class="project-table"><caption>Complete Project Breakdown</caption><thead><tr><th scope="col">Project / location</th><th scope="col">Client</th><th scope="col">Scope</th><th scope="col">Value</th><th scope="col">Duration</th><th scope="col">Completion</th></tr></thead><tbody>${projects.map(p=>`<tr><th scope="row">${p.name}<small>${p.place}</small></th><td data-label="Client">${p.client}</td><td data-label="Scope">Excavation work</td><td class="numeric" data-label="Contract value">₹${p.value} Cr</td><td class="numeric" data-label="Duration">${p.duration} months</td><td class="numeric" data-label="Completion"><strong>${p.progress}%</strong><span class="table-progress"><i style="width:${p.progress}%"></i></span></td></tr>`).join('')}</tbody><tfoot><tr><th scope="row" colspan="3">Portfolio total · 5 projects</th><td class="numeric">₹${portfolioValue.toFixed(2)} Cr</td><td>—</td><td class="numeric">${averageCompletion}% average</td></tr></tfoot></table></div><p class="data-note">Individual contract values come from the supplied project schedule; their total matches the PDF’s ₹5.15 crore portfolio.</p><div class="filters" role="group" aria-label="Filter projects">${['All projects','Metro','Infrastructure','Commercial'].map((s,i)=>`<button data-filter="${s}" aria-pressed="${i===0}">${s}</button>`).join('')}</div><div id="project-grid" class="project-grid"></div><p class="project-note">Project values and completion figures are as listed in the supplied company profile. Images from the supplied folder illustrate our sector and capabilities.</p></section>
 <section class="fleet" id="fleet"><div class="fleet-picture"><img src="${img('site-earthworks.webp')}" alt="Heavy loader and excavation machinery" loading="lazy"/><span class="fleet-outline" aria-hidden="true">POWER</span></div><div class="fleet-copy reveal"><p class="eyebrow">Machinery & Equipment</p><h2>BUILT FOR <br><em>HEAVY WORK.</em></h2><p>A modern, well-maintained fleet supports operational readiness and efficiency, from excavation to material handling and concrete production.</p><div class="fleet-summary"><div><strong>${equipment.reduce((sum,item)=>sum+item.count,0)}</strong><span>Listed units</span></div><div><strong>${equipment.length}</strong><span>Equipment categories</span></div><div><strong>60<small> TPS</small></strong><span>RMC plant specification</span></div></div><p class="data-note">Inventory and plant specification as listed in the PDF.</p><a class="button" href="#equipment-detail">Explore the full inventory <span>↓</span></a></div></section>
-<section class="films section" id="films"><div class="section-heading reveal"><div><p class="eyebrow">See The Machinery In Motion</p><h2>POWER. PRECISION. <br><em>PROGRESS.</em></h2></div><p>A closer look at excavation, earthmoving and the equipment behind the work.</p></div><div class="film-grid">${films.map(f=>`<figure class="film-card"><div class="inline-film"><video class="autoplay-film" autoplay muted loop playsinline preload="metadata" poster="${img(f.poster)}" aria-label="${f.title}"><source src="${img(f.file)}" type="video/mp4"/></video><button class="video-toggle" aria-label="Pause ${f.title}">Ⅱ</button></div><figcaption class="film-caption"><small>${f.detail}</small><h3>${f.title}</h3></figcaption></figure>`).join('')}</div></section>
+<section class="films section" id="films"><div class="section-heading reveal"><div><p class="eyebrow">See The Machinery In Motion</p><h2>POWER. PRECISION. <br><em>PROGRESS.</em></h2></div><p>A closer look at excavation, earthmoving and the equipment behind the work.</p></div><div class="film-grid">${films.map(f=>`<figure class="film-card"><div class="inline-film"><video class="autoplay-film" muted loop playsinline preload="none" poster="${img(f.poster)}" aria-label="${f.title}"><source data-src="${img(f.file)}" type="video/mp4"/></video><button class="video-toggle" aria-label="Pause ${f.title}">Ⅱ</button></div><figcaption class="film-caption"><small>${f.detail}</small><h3>${f.title}</h3></figcaption></figure>`).join('')}</div></section>
 <section class="inventory section" id="equipment-detail"><div class="section-heading reveal"><div><p class="eyebrow">Every Machine Has A Purpose</p><h2>THE COMPLETE <br><em>EQUIPMENT LINE-UP.</em></h2></div><p>All eleven equipment categories and quantities from the company brochure.</p></div><div class="equipment-grid">${equipment.map(item=>`<article class="equipment-item"><strong>${String(item.count).padStart(2,'0')}<small>UNITS</small></strong><div><h3>${item.name}</h3><p>${item.detail}</p></div></article>`).join('')}</div><details class="source-detail"><summary>Earlier equipment schedule supplied with the screenshots</summary><p>TATA Poclain: 2 · JCB: 3 · Bobcat: 1 · Hyva heavy tippers: 6 · Tippers: 4. This earlier schedule differs from the PDF inventory shown above.</p></details></section>
 <section class="team-section section" id="team"><div class="section-heading reveal"><div><p class="eyebrow">Human Capital</p><h2>EXPERIENCED PEOPLE. <br><em>PERSONAL COMMITMENT.</em></h2></div><p>From site engineers and supervisors to operators and drivers, our people support quality and reliability on every project.</p></div><div class="team-grid">${team.map(role=>`<article><strong>${String(role.count).padStart(2,'0')}</strong><h3>${role.name}</h3><p>${role.detail}</p></article>`).join('')}</div><div class="promise-grid">${promises.map(p=>`<article><h3>${p[0]}</h3><p>${p[1]}</p></article>`).join('')}</div></section>
 
@@ -60,10 +60,41 @@ document.querySelectorAll<HTMLButtonElement>('[data-filter]').forEach(button=>bu
 const dialog=document.querySelector<HTMLDialogElement>('#project-dialog')!;
 grid.addEventListener('click',e=>{const card=(e.target as HTMLElement).closest<HTMLButtonElement>('[data-project]');if(!card)return;const p=projects[Number(card.dataset.project)];document.querySelector('#project-detail')!.innerHTML=`<p class="eyebrow">${p.type} · ${p.place}</p><h2 id="dialog-title">${p.name}</h2><p>${p.client}</p><div class="project-facts"><div><span>Scope of work</span><strong>Excavation work</strong></div><div><span>Contract value</span><strong>₹${p.value} crore</strong></div><div><span>Duration</span><strong>${p.duration} months</strong></div><div><span>Reported completion</span><strong>${p.progress}%</strong></div></div><p class="project-note">Figures from the supplied company profile; not a live status update.</p><a class="button" href="#contact" id="project-enquire">Discuss a similar project ${arrow}</a>`;dialog.setAttribute('aria-labelledby','dialog-title');dialog.showModal();document.querySelector('#project-enquire')!.addEventListener('click',()=>dialog.close())});
 document.querySelector('.close-dialog')!.addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
-const menu=document.querySelector<HTMLButtonElement>('.menu-toggle')!;function closeMenu(){menu.setAttribute('aria-expanded','false');document.querySelector('.header')!.classList.remove('menu-open')};menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));document.querySelector('.header')!.classList.toggle('menu-open',open)});document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',closeMenu));document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+const menu=document.querySelector<HTMLButtonElement>('.menu-toggle')!;
+const header=document.querySelector<HTMLElement>('.header')!;
+function setMenu(open:boolean){
+ menu.setAttribute('aria-expanded',String(open));
+ menu.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+ header.classList.toggle('menu-open',open);
+}
+menu.addEventListener('click',()=>setMenu(menu.getAttribute('aria-expanded')!=='true'));
+document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape'&&menu.getAttribute('aria-expanded')==='true'){setMenu(false);menu.focus()}
+});
+document.addEventListener('click',e=>{if(!header.contains(e.target as Node))setMenu(false)});
+window.matchMedia('(max-width: 900px)').addEventListener('change',()=>setMenu(false));
 const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:0.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-document.querySelector<HTMLFormElement>('.enquiry')!.addEventListener('submit',e=>{e.preventDefault();const data=new FormData(e.currentTarget as HTMLFormElement);const phoneValue=String(data.get('phone'));if(phoneValue.replace(/[^0-9]/g,'').length<7||phoneValue.replace(/[^0-9]/g,'').length>15){document.querySelector('#form-status')!.textContent='Enter a phone number with 7 to 15 digits.';document.querySelector<HTMLInputElement>('#phone')!.focus();return;}const text=`Hello SJ Constructions,\nMy name is ${data.get('name')}.\nPhone: ${data.get('phone')}\nService: ${data.get('service')}\nProject: ${data.get('message')}`;const status=document.querySelector('#form-status')!;status.replaceChildren();const link=document.createElement('a');link.href=`https://wa.me/918308900900?text=${encodeURIComponent(text)}`;link.target='_blank';link.rel='noopener';link.className='prepared-link';link.textContent='Enquiry ready — open WhatsApp ↗';status.append(link);link.focus()});
-
+const enquiry=document.querySelector<HTMLFormElement>('.enquiry')!;
+const formStatus=document.querySelector<HTMLElement>('#form-status')!;
+enquiry.addEventListener('input',()=>formStatus.replaceChildren());
+enquiry.addEventListener('submit',e=>{
+ e.preventDefault();
+ const data=new FormData(enquiry);
+ const name=String(data.get('name')).trim();
+ const phone=String(data.get('phone')).trim();
+ const message=String(data.get('message')).trim();
+ const fail=(text:string,id:string)=>{formStatus.textContent=text;document.querySelector<HTMLInputElement>(id)!.focus()};
+ if(!name){fail('Please enter your name.','#name');return}
+ if(!/^[+\d\s().-]+$/.test(phone)||phone.replace(/\D/g,'').length<7||phone.replace(/\D/g,'').length>15){fail('Enter a phone number with 7 to 15 digits.','#phone');return}
+ if(!message){fail('Please add your project details.','#message');return}
+ const text=`Hello SJ Constructions,\nMy name is ${name}.\nPhone: ${phone}\nService: ${data.get('service')}\nProject: ${message}`;
+ const link=document.createElement('a');
+ link.href=`https://wa.me/918308900900?text=${encodeURIComponent(text)}`;
+ link.target='_blank';link.rel='noopener';link.className='prepared-link';
+ link.textContent='Enquiry ready — open WhatsApp ↗';
+ formStatus.replaceChildren(link);link.focus();
+});
 
 // Inline videos start muted, loop, and pause when off-screen to avoid unnecessary decoding.
 const videos=[...document.querySelectorAll<HTMLVideoElement>('.autoplay-film')];
@@ -71,22 +102,26 @@ const visibleVideos=new Set<HTMLVideoElement>();
 const manuallyPaused=new Set<HTMLVideoElement>();
 const manuallyStarted=new Set<HTMLVideoElement>();
 const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+function loadVideo(video:HTMLVideoElement){
+ const source=video.querySelector<HTMLSourceElement>('source[data-src]');
+ if(source){source.src=source.dataset.src!;delete source.dataset.src;video.load()}
+}
 function syncVideo(video:HTMLVideoElement){
  const shouldPlay=visibleVideos.has(video)&&!manuallyPaused.has(video)&&!document.hidden&&(!reducedMotion.matches||manuallyStarted.has(video));
- if(shouldPlay) void video.play().catch(()=>{}); else video.pause();
+ if(shouldPlay){loadVideo(video);void video.play().catch(()=>{})}else video.pause();
 }
 const videoObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
  const video=entry.target as HTMLVideoElement;
- if(entry.isIntersecting)visibleVideos.add(video);else visibleVideos.delete(video);
+ if(entry.isIntersecting&&entry.intersectionRatio>=0.15)visibleVideos.add(video);else visibleVideos.delete(video);
  syncVideo(video);
 }),{threshold:0.15});
 videos.forEach(video=>{
  video.muted=true;
- video.autoplay=!reducedMotion.matches;
+ video.autoplay=false;
  if(reducedMotion.matches)video.pause();
  const control=video.parentElement!.querySelector<HTMLButtonElement>('.video-toggle')!;
  const update=()=>{control.textContent=video.paused?'▷':'Ⅱ';control.setAttribute('aria-label',`${video.paused?'Play':'Pause'} ${video.getAttribute('aria-label')}`)};
- video.addEventListener('play',update);video.addEventListener('pause',update);
+ video.addEventListener('play',update);video.addEventListener('pause',update);update();
  control.addEventListener('click',()=>{if(video.paused){manuallyPaused.delete(video);manuallyStarted.add(video)}else{manuallyPaused.add(video);manuallyStarted.delete(video)}syncVideo(video)});
  videoObserver.observe(video);
 });
@@ -134,3 +169,11 @@ function syncPhoneDetails(){
 }
 syncPhoneDetails();
 phoneLayout.addEventListener('change',syncPhoneDetails);
+
+// The HTML is rendered by JavaScript, after the browser's initial anchor lookup.
+// Restore shared section links once their final responsive layout exists.
+if(window.location.hash){
+ requestAnimationFrame(()=>{
+  try{document.getElementById(decodeURIComponent(window.location.hash.slice(1)))?.scrollIntoView({behavior:'instant'})}catch{/* Ignore malformed URL fragments. */}
+ });
+}
