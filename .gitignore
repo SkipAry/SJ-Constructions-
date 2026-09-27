@@ -1,0 +1,13 @@
+node_modules/
+dist/
+tmp/
+*.log
+
+.netlify/
+.env
+.env.*
+!.env.example
+/docs/screenshots/
+/*.jpg
+/*.png
+/*.mp4

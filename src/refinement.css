@@ -1,0 +1,92 @@
+/* Video hero only. All other sections retain the previous design. */
+.hero.cinema-hero{display:flex;flex-direction:column;justify-content:space-between;position:relative;isolation:isolate;height:auto;min-height:680px;min-height:calc(100svh - 92px);max-height:none;padding:clamp(70px,8vw,130px) max(5%,calc((100% - 1380px)/2)) 32px;overflow:hidden;background:#172b34;color:#fff;gap:70px}
+.hero-cinema{position:absolute;inset:0;z-index:-1;background:#172b34}
+.hero-cinema:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,20,30,.82),rgba(8,20,30,.53) 50%,rgba(8,20,30,.12)),linear-gradient(0deg,rgba(8,20,30,.65),transparent 45%);pointer-events:none}
+.hero-cinema video{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-cinema .video-toggle{z-index:3;bottom:31px;right:5%;width:46px;height:46px;border-color:#ffffff60;background:#142a3e75}
+.cinema-content{max-width:850px;pointer-events:none}
+.cinema-content a{pointer-events:auto}
+.cinema-content .eyebrow{color:#e9edf0;font-size:.8125rem;margin-bottom:26px;letter-spacing:.13em}
+.hero.cinema-hero h1{font-size:clamp(3.5rem,6.3vw,6.25rem);font-weight:700;line-height:1.02;letter-spacing:-.045em;white-space:normal;text-wrap:balance;margin:0;max-width:900px}
+.hero.cinema-hero h1>span{color:#fff;display:inline;font-size:inherit;letter-spacing:inherit;font-weight:400}
+.cinema-description{color:#e0e6eb;font-size:clamp(1.0625rem,1.3vw,1.25rem);line-height:1.65;max-width:540px;margin-top:28px}
+.hero-actions{display:flex;gap:30px;align-items:center;margin-top:34px;flex-wrap:wrap}
+.hero-actions .button{background:var(--orange);color:#102139;padding:18px 25px;gap:36px;min-height:58px}
+.hero-actions .button:hover{background:#fff;color:var(--navy)}
+.hero-secondary{font-size:1rem;font-weight:500;color:#fff;display:flex;align-items:center;gap:28px;min-height:54px;border-bottom:1px solid #ffffff65}
+.cinema-footer{display:flex;align-items:center;gap:50px;border-top:1px solid #ffffff30;padding-top:23px;padding-right:76px;pointer-events:none}
+.cinema-footer>div{display:flex;flex-direction:column;gap:3px}
+.cinema-footer>div>span{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#c5d0da}
+.cinema-footer strong{font-size:.95rem;font-weight:500}
+.cinema-footer p{font-size:.85rem;color:#d3dce4;margin-left:auto}
+.cinema-footer p>span{color:#93a3b2;padding:0 10px}
+.cinema-footer a{font-size:.85rem;white-space:nowrap;display:flex;align-items:center;gap:18px;pointer-events:auto;min-height:44px}
+@media(min-width:1600px){
+.hero.cinema-hero{min-height:780px}
+.hero-cinema .video-toggle{right:max(5%,calc((100% - 1380px)/2))}
+}
+@media(max-width:1200px){
+.cinema-footer{gap:25px}
+.cinema-footer a{display:none}
+.hero.cinema-hero{min-height:680px}
+}
+@media(max-width:900px){
+.hero.cinema-hero{padding:80px 5% 28px;min-height:calc(100svh - 80px);gap:65px}
+.hero.cinema-hero h1{font-size:clamp(3.1rem,7vw,4.5rem)}
+.cinema-description{max-width:500px}
+.cinema-footer{align-items:flex-start}
+.cinema-footer p{max-width:220px;margin-left:auto}
+}
+@media(max-width:700px){
+.hero.cinema-hero{display:flex;padding:64px 6% 23px;min-height:calc(100svh - 76px);gap:46px;height:auto;max-height:none}
+.hero-cinema:after{background:linear-gradient(90deg,rgba(8,20,30,.76),rgba(8,20,30,.36)),linear-gradient(0deg,rgba(8,20,30,.85),transparent 70%)}
+.hero-cinema video{object-position:58% center}
+.cinema-content{max-width:100%;padding:0}
+.cinema-content .eyebrow{font-size:.7rem;line-height:1.6;letter-spacing:.1em;max-width:270px;margin-bottom:22px}
+.hero.cinema-hero h1{font-size:clamp(2.75rem,11vw,4rem);line-height:1.06;letter-spacing:-.04em;text-wrap:initial}
+.hero.cinema-hero h1>span{font-size:inherit;display:inline;margin:0;font-weight:400}
+.cinema-description{font-size:1.0625rem;line-height:1.6;margin-top:23px;max-width:390px}
+.hero-actions{margin-top:28px;gap:16px;align-items:stretch;flex-direction:column;max-width:340px}
+.hero-actions .button{font-size:1rem;padding:16px 20px;min-height:55px}
+.hero-secondary{justify-content:space-between;align-self:flex-start;min-width:170px;min-height:45px;font-size:.9375rem}
+.cinema-footer{padding-top:18px;padding-right:58px;gap:0;display:block;margin-top:auto}
+.cinema-footer p{display:none}
+.cinema-footer strong{font-size:.9rem}
+.cinema-footer>div>span{font-size:.65rem}
+.hero-cinema .video-toggle{right:6%;bottom:25px;width:44px;height:44px}
+}
+@media(max-width:360px){
+.hero.cinema-hero{padding-top:45px;gap:34px}
+.hero.cinema-hero h1{font-size:2.65rem}
+.cinema-description{font-size:1rem}
+.hero-actions{gap:12px}
+}
+@media(max-height:600px) and (min-width:701px){
+.hero.cinema-hero{min-height:620px;padding-top:60px;gap:45px}
+}
+/* Typography and colours are scoped to the replacement hero only. */
+.hero.cinema-hero{--orange:#f36b32;--navy:#102139}
+.cinema-content .eyebrow{text-transform:uppercase}
+.hero.cinema-hero h1{font-family:Barlow,sans-serif;text-transform:none}
+@media (min-width:701px) and (max-width:900px){.hero.cinema-hero{min-height:calc(100svh - 92px)}}
+
+/* Navigation shares the hero video background. */
+.header{position:absolute;inset:0 0 auto;z-index:20;background:linear-gradient(180deg,rgba(8,20,30,.7),rgba(8,20,30,.12));color:#fff;border-bottom:1px solid #ffffff26}
+.header .brand small{color:#e0e6eb}
+.header .nav-cta{border-left-color:#ffffff40}
+.header .menu-toggle span{background:#fff}
+.header :focus-visible{outline-color:#fff}
+.hero.cinema-hero{min-height:100svh;padding-top:calc(92px + clamp(70px,8vw,130px))}
+@media(max-width:900px){
+ .hero.cinema-hero{padding-top:164px}
+ .header nav{background:rgba(8,20,30,.97);color:#fff;border-bottom:1px solid #ffffff26}
+}
+@media(max-width:700px){.hero.cinema-hero{padding-top:144px}}
+@media(max-width:360px){.hero.cinema-hero{padding-top:125px}}
+@media(max-height:600px) and (min-width:901px){.hero.cinema-hero{padding-top:152px}}
+
+/* Heading copy uses title case in the source, including assistive text. */
+h1,h2,h3,h4,h5,h6,.eyebrow,.cinema-content .eyebrow{text-transform:none}
+
+/* Uppercase navigation labels on desktop and mobile. */
+.header nav a,.header .nav-cta{text-transform:uppercase}

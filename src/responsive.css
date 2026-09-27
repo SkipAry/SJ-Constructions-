@@ -1,0 +1,194 @@
+/* Readability and responsive layout: shared type scale, then content-led breakpoints. */
+:root{--muted:#505d72;--body-size:clamp(1.0625rem,1rem + .18vw,1.1875rem)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-size:var(--body-size);line-height:1.7}
+h2{font-size:clamp(2.125rem,4.8vw,4.5rem);line-height:1.12;letter-spacing:-.035em;overflow-wrap:anywhere}
+h3{line-height:1.3;overflow-wrap:anywhere}
+.section-heading>*,.chart-heading>*,.fleet-copy,.project-caption>div{min-width:0}
+p{line-height:1.7}
+.intro-copy p,.service-card>p,.section-heading>p,.fleet-copy>p:not(.eyebrow),.contact-copy>p:not(.eyebrow),.equipment-item p,.team-grid p,.promise-grid p,.portfolio-intro{font-size:var(--body-size)}
+.eyebrow,.numbers .eyebrow,.hero-title .eyebrow{font-size:.875rem;letter-spacing:.12em;line-height:1.6}
+nav a,.nav-cta,.button,.fleet .button,.text-link,.hero-title .text-link,.service-card details,.filters button,.chart-switch button,.prepared-link{font-size:1rem}
+nav a{padding:12px 0}
+.button{min-height:56px;gap:22px;line-height:1.4}
+.text-link,.offices a,.secondary-number,.source-detail summary,.service-card summary{min-height:44px;align-content:center}
+.brand small{font-size:.625rem;letter-spacing:.1em}
+.header{gap:28px}nav{gap:24px}.nav-cta{padding-left:24px;gap:15px}
+.mini-bar{font-size:.65rem;letter-spacing:.05em}.mini-bar span{font-size:inherit}
+.panel-tag{font-size:.75rem;letter-spacing:.04em}.hero-bottom{font-size:.75rem;letter-spacing:.08em}
+.hero-tagline{font-size:clamp(1.125rem,1rem + .4vw,1.5rem)}
+.motion-toggle,.video-toggle,.back-top,.menu-toggle{min-width:44px;min-height:44px}
+.stats span,.fleet-summary span,.project-caption small,.film-caption small,.project-category,.chart-axis,.chart-label small{font-size:.875rem;line-height:1.5}
+.project-caption>span{font-size:1rem}.project-caption{gap:16px}.project-caption h3{font-size:1.5rem}
+.project-note,.data-note,.fleet-copy .data-note,.snapshot-note,.form-note,.source-detail,footer small{font-size:.875rem;line-height:1.65}
+.snapshot-note{max-width:760px;margin:30px auto 0}.project-note{max-width:850px}
+.chart-label{font-size:1rem;line-height:1.4}.chart-row>strong{font-size:1.125rem}
+.chart-row{grid-template-columns:230px minmax(0,1fr) 95px;gap:22px;padding:16px 0}
+.chart-axis{margin-left:252px;margin-right:117px}
+.chart-track{height:28px}.chart-heading h3{font-size:1.75rem}
+.project-table{font-size:1rem;min-width:960px;line-height:1.55}
+.project-table thead{font-size:.875rem}.project-table tbody th{font-size:1.0625rem}
+.project-table th small{font-size:.875rem}.project-table caption{font-size:1.5rem}
+.project-table th,.project-table td{padding:22px 18px}
+.equipment-item h3,.team-grid h3,.promise-grid h3,.offices h3{font-size:1.375rem}
+.equipment-item>strong small{font-size:.75rem;letter-spacing:.08em}
+.equipment-grid{gap:0 32px}.team-grid{gap:26px}
+.offices p,.offices a,.secondary-number,.contact-person{font-size:1rem}
+.offices{gap:30px}.offices a{display:inline-flex;align-items:center;gap:10px}
+.enquiry label{font-size:1rem;margin-top:22px}.enquiry>p:first-of-type{font-size:1rem}
+.enquiry input,.enquiry select,.enquiry textarea{font-size:1.125rem;min-height:48px;line-height:1.5}
+.enquiry select{padding-right:20px}.enquiry textarea{min-height:130px}
+footer p{font-size:1rem}footer small{display:block;margin-top:8px}
+.project-facts span{font-size:1rem}.project-facts strong{font-size:1.25rem}
+.film-caption h3{font-size:1.5rem}.film-caption small{letter-spacing:.05em}
+@media(min-width:1600px){.header{padding-inline:max(4%,calc((100% - 1520px)/2))}.numbers,footer{padding-inline:max(7%,calc((100% - 1280px)/2))}.hero-title{max-width:1500px}.fleet-copy{padding-right:max(12%,calc((100vw - 1400px)/2))}}
+@media(max-width:1200px){.nav-cta{display:none}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.contact{grid-template-columns:1fr;gap:45px}.offices{grid-template-columns:1fr 1fr}.contact-copy{max-width:850px}.enquiry{max-width:850px;width:100%}.chart-row{grid-template-columns:190px minmax(0,1fr) 95px}.chart-axis{margin-left:212px}.fleet{grid-template-columns:1fr 1fr}.fleet-copy{padding:55px 7%}.fleet h2{font-size:clamp(2rem,4vw,3rem)}}
+@media(max-width:900px){
+ .header{height:84px;padding:0 5%;justify-content:space-between}
+ .menu-toggle{display:flex;width:48px;height:48px;flex-direction:column;gap:7px;align-items:center;justify-content:center;border:0;background:none;flex-shrink:0}
+ .menu-toggle span{height:2px;width:26px;background:var(--navy);transition:transform .2s}
+ .menu-open .menu-toggle span:first-child{transform:translateY(4.5px) rotate(45deg)}
+ .menu-open .menu-toggle span:last-child{transform:translateY(-4.5px) rotate(-45deg)}
+ nav{display:none;position:absolute;left:0;right:0;top:84px;background:#fff;padding:18px 5%;box-shadow:0 15px 20px #09194a14;flex-direction:column;gap:0}
+ .menu-open nav{display:flex}nav a{font-size:1.125rem;padding:14px 0;min-height:52px}
+ .section{padding:80px 5%}.section-heading{flex-direction:column;align-items:flex-start;gap:24px}.section-heading>p{max-width:650px}
+ .fleet{grid-template-columns:1fr;min-height:0}.fleet-picture{height:400px}.fleet-copy{padding:60px 5%}.fleet-summary{max-width:550px}
+ .chart-row{grid-template-columns:minmax(0,1fr) 95px;gap:8px 18px}.chart-label{grid-column:1/-1}.chart-label small{display:inline;margin-left:12px}.chart-axis{margin-left:0;margin-right:113px}
+ .chart-heading{flex-direction:column;align-items:flex-start}.chart-switch{flex-wrap:wrap}
+ .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.promise-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .project-caption{flex-direction:column;gap:0}.project-caption>span{padding-top:8px}
+}
+@media(max-width:700px){
+ html{scroll-padding-top:20px}.header{height:80px;gap:10px}nav{top:80px}
+ .brand{font-size:.875rem;gap:10px}.brand-mark{font-size:36px}.brand small{font-size:.625rem;letter-spacing:.04em}
+ .hero{height:auto;min-height:0;max-height:none;display:grid;grid-template-columns:1fr 1fr;gap:28px 16px;padding:42px 5% 24px}
+ .hero-title{position:relative;top:auto;left:auto;transform:none;width:100%;padding:0;grid-column:1/-1}
+ .hero h1{font-size:clamp(1.8rem,8.5vw,3.5rem);letter-spacing:-.04em;line-height:1.12;white-space:normal}
+ .hero h1>span:first-child{font-size:clamp(4rem,20vw,6rem);display:block;margin-bottom:4px}
+ .hero-title .eyebrow{font-size:.75rem;letter-spacing:.07em;margin-bottom:20px}
+ .hero-tagline{font-size:1.25rem;line-height:1.5;margin:20px auto 14px;max-width:300px}
+ .hero-title .text-link{font-size:1rem}
+ .panel-a,.panel-b,.pencil,.ruler{display:none}
+ .panel-c,.hero-film{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:100%;height:220px;transform:none;animation:none}
+ .panel-c{border:0;box-shadow:none}.panel-c .panel-caption{font-size:1.125rem;left:12px;bottom:62px}.panel-c .panel-tag{font-size:.75rem;line-height:1.4;padding:10px}
+ .hero-film video{object-position:center}.hero-bottom{position:relative;bottom:auto;left:auto;right:auto;grid-column:1/-1;display:block;padding-right:54px;font-size:.75rem}
+ .hero-bottom>span{display:none}.hero-bottom a{align-items:center;min-height:44px;gap:16px}
+ .motion-toggle{right:5%;bottom:24px;width:44px;height:44px}
+ h2,.contact h2,.fleet h2{font-size:clamp(2rem,8vw,3rem);letter-spacing:-.035em;line-height:1.13}
+ .section{padding:64px 5%}.outline-word{font-size:22vw;top:25px}.section-heading{margin-bottom:30px}
+ .eyebrow,.numbers .eyebrow{font-size:.8125rem;letter-spacing:.08em}.intro-copy h3{font-size:1.75rem}
+ .service-grid,.project-grid{grid-template-columns:1fr}.service-card h3{font-size:1.625rem}
+ .service-card>p,.service-card details,.section-heading>p,.intro-copy p,.equipment-item p,.team-grid p,.promise-grid p,.portfolio-intro{font-size:1.0625rem}
+ .service-image,.project-image{height:auto;aspect-ratio:3/2}.service-image img,.project-image img{height:100%}
+ .button{font-size:1rem;padding:16px 20px;max-width:100%}.fleet .button{font-size:1rem}
+ .numbers{padding:52px 5%}.numbers h2{font-size:2rem}.stats{gap:32px 12px}.stats>div{padding:0 6px;border:0}
+ .stats strong{font-size:clamp(2.3rem,10vw,3.5rem);letter-spacing:-.04em}.stats span{font-size:1rem}.snapshot-note{max-width:none}
+ .filters{gap:8px 18px;white-space:normal;flex-wrap:wrap;overflow:visible}.filters button{font-size:1rem;min-height:48px;padding:10px 0}
+ .project-dashboard{padding:25px 18px}.chart-heading h3{font-size:1.5rem}.chart-switch{gap:20px}.chart-switch button{font-size:1rem;min-height:48px}
+ .chart-label{font-size:1rem}.chart-label small{display:block;margin:4px 0 0;font-size:.875rem}.chart-axis{font-size:.8125rem;margin-right:96px}
+ .chart-row{grid-template-columns:minmax(0,1fr) 80px;gap:10px 16px}.chart-row>strong{font-size:1rem}.chart-track{height:25px}
+ .project-note,.data-note,.fleet-copy .data-note,.snapshot-note,.source-detail{font-size:.9375rem}
+ /* Same semantic table, reflowed into complete project records for phones. */
+ .project-table-wrap{border:0;overflow:visible}.project-table{min-width:0;display:block;font-size:1rem}
+ .project-table caption{display:block;padding:20px 0;font-size:1.5rem}
+ .project-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .project-table tbody,.project-table tfoot{display:block}
+ .project-table tbody tr{display:grid;grid-template-columns:1fr 1fr;margin-bottom:24px;border:1px solid #d6dce6;background:#fff}
+ .project-table tbody th{grid-column:1/-1;display:block;min-width:0;background:var(--navy);color:white;font-size:1.25rem;padding:18px;border:0}
+ .project-table th small{font-size:1rem;color:#d4dced}
+ .project-table tbody td{display:block;padding:14px 18px;white-space:normal;font-size:1rem;overflow-wrap:anywhere}
+ .project-table td[data-label="Client"]{grid-column:1/-1}
+ .project-table td:before{content:attr(data-label);display:block;font-size:.875rem;font-weight:500;color:var(--muted);margin-bottom:5px}
+ .project-table tbody td:last-child{grid-column:1/-1}.table-progress{width:100%;height:5px}
+ .project-table tfoot tr{display:flex;flex-wrap:wrap;padding:16px;gap:10px 24px}.project-table tfoot th,.project-table tfoot td{padding:0;border:0;white-space:normal}.project-table tfoot th{width:100%}.project-table tfoot td:nth-child(3){display:none}
+ .equipment-grid{grid-template-columns:1fr}.equipment-item{gap:22px}.equipment-item h3,.team-grid h3,.promise-grid h3{font-size:1.375rem}
+ .fleet-picture{height:auto;aspect-ratio:4/3}.fleet-copy{padding:50px 5%}.fleet-summary{gap:16px}.fleet-summary strong{font-size:2.5rem}.fleet-summary span{font-size:.9375rem}
+ .offices{grid-template-columns:1fr;gap:32px}.offices p{font-size:1.0625rem}.offices a{font-size:1rem}.offices h3{font-size:1.5rem}
+ .contact-number{font-size:clamp(1.5rem,7vw,2rem);letter-spacing:-.03em;line-height:1.5}.secondary-number{font-size:1rem;line-height:1.7}
+ .enquiry{padding:28px 20px}.enquiry h3{font-size:1.5rem}.enquiry label{font-size:1rem}.enquiry input,.enquiry select,.enquiry textarea{font-size:1.0625rem}
+ .form-note{font-size:.9375rem}.enquiry .button{gap:12px}
+ .film-caption h3{font-size:1.375rem}.film-caption small{font-size:.875rem;text-transform:none;letter-spacing:0}.film-grid{gap:32px 18px}
+ .video-toggle{width:44px;height:44px;right:8px;bottom:8px}
+ footer{padding:36px 5%;gap:24px}.footer-brand{font-size:1.25rem}footer small{font-size:.875rem;overflow-wrap:anywhere}
+ dialog{padding:52px 22px 28px;max-height:90dvh;overflow:auto}dialog h2{font-size:2rem}.project-facts{gap:20px}.project-facts span{font-size:.9375rem}.project-facts strong{font-size:1.125rem}
+}
+@media(max-width:420px){.team-grid,.promise-grid,.film-grid{grid-template-columns:1fr}.team-grid article{display:grid;grid-template-columns:65px minmax(0,1fr);column-gap:18px;align-items:start}.team-grid strong{grid-row:1/3;font-size:2.75rem;margin:0}.team-grid p{grid-column:2}.team-grid h3{margin-bottom:8px}.inline-film{aspect-ratio:3/4;max-height:65svh}.fleet-summary{flex-wrap:wrap}.fleet-summary>div{min-width:90px}.hero .panel-c,.hero-film{height:190px}.panel-c .panel-caption{font-size:1rem}.brand small{font-size:.5625rem}.project-table tbody td{padding:14px}.chart-switch{gap:14px}.chart-switch button{font-size:.9375rem}}
+@media(pointer:coarse){.project-open{opacity:1;transform:none}.button,.filters button,.chart-switch button,summary{min-height:48px}}
+
+/* Spacing audit: preserve the design, tighten its vertical rhythm. */
+:root{--section-gutter:max(6%,calc((100% - 1280px)/2));--section-rhythm:clamp(48px,5vw,72px)}
+body,p{line-height:1.6}
+.section{padding:var(--section-rhythm) var(--section-gutter);margin:0}
+.section h2,.fleet h2{font-size:clamp(2rem,4vw,3.5rem);line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+.section h3{line-height:1.3}
+.section .eyebrow{margin-bottom:16px}
+.section-heading{margin-bottom:32px;gap:28px;align-items:flex-start}
+.section-heading>p{padding-bottom:0;max-width:410px}
+.intro-grid{gap:6%;align-items:start}
+.intro-copy{padding-top:0}
+.intro-copy h3{margin-bottom:16px}
+.intro-copy p+p{margin-top:14px}
+.intro .button{margin-top:26px}
+.intro-copy .orange-line{margin-bottom:20px}
+.outline-word{top:8px;pointer-events:none}
+.service-image{margin-bottom:20px}
+.service-card h3{margin-bottom:12px}
+.service-card details{margin-top:18px}
+.service-grid{row-gap:32px}
+.numbers{padding:48px var(--section-gutter)}
+.numbers .eyebrow{margin-bottom:14px}
+.stats{margin-top:28px}
+.snapshot-note{margin-top:20px}
+.portfolio-intro{margin:0 0 26px;max-width:800px}
+.project-dashboard{padding:28px 30px;margin-bottom:26px}
+.chart-heading{margin-bottom:24px}
+.chart-row{padding:12px 0}
+.project-table th,.project-table td{padding:18px 16px}
+.filters{margin-bottom:24px}
+.project-grid{row-gap:28px}
+.project-caption{align-items:flex-start}
+.project-caption>span{padding-top:0;align-self:flex-end}
+.fleet{min-height:0}
+.fleet-copy{padding:56px 10%;align-self:center}
+.fleet-copy>p:not(.eyebrow){margin-top:20px}
+.fleet-summary{padding-block:22px}
+.equipment-item{padding:22px 0;align-items:flex-start}
+.equipment-item h3,.team-grid h3,.promise-grid h3{margin-bottom:8px}
+.source-detail{margin-top:22px;padding-top:16px}
+.promise-grid{margin-top:32px;padding-top:26px}
+.team-grid strong{margin-bottom:10px}
+.film-caption{padding-top:14px}
+.marquee{padding-block:22px}
+.marquee>div{font-size:clamp(2rem,4.5vw,4rem);line-height:1.15}
+.contact{align-items:start}
+.offices{margin-top:28px}
+.enquiry label{margin-top:16px}
+@media(max-width:900px){
+ :root{--section-gutter:5%}
+ .section-heading{gap:18px}
+ .section-heading>p{margin-top:0;max-width:650px}
+ .intro-grid{gap:28px}
+ .fleet-copy{padding:48px 5%}
+ .project-caption>span{align-self:flex-start;padding-top:8px}
+ .contact{gap:32px}
+}
+@media(max-width:700px){
+ :root{--section-rhythm:40px}
+ .section h2,.fleet h2{font-size:clamp(2rem,8vw,3rem);line-height:1.14}
+ .section-heading{display:flex;margin-bottom:24px}
+ .section .eyebrow{margin-bottom:12px}
+ .intro-copy h3{font-size:1.5rem}
+ .intro-grid{gap:26px}
+ .numbers{padding-block:36px}
+ .project-dashboard{padding:22px 16px}
+ .project-table tbody th{padding:16px}
+ .project-table tbody td{padding:12px 14px}
+ .project-table tbody tr{margin-bottom:18px}
+ .project-table tfoot th,.project-table tfoot td{padding:0}
+ .fleet-copy{padding:36px 5%}
+ .equipment-item{padding:20px 0}
+ .promise-grid{margin-top:26px;padding-top:22px}
+ .film-grid{row-gap:26px}
+ .offices{gap:24px}
+ .marquee{padding-block:18px}
+}
