@@ -90,3 +90,12 @@ h1,h2,h3,h4,h5,h6,.eyebrow,.cinema-content .eyebrow{text-transform:none}
 
 /* Uppercase navigation labels on desktop and mobile. */
 .header nav a,.header .nav-cta{text-transform:uppercase}
+
+/* Supplied logo artwork, framed without its transparent top/bottom padding. */
+.header .brand{display:block;width:280px;flex:0 0 280px}
+.brand-logo{display:block;width:100%;height:auto;aspect-ratio:4.5;object-fit:cover}
+footer .footer-brand{display:block;width:245px;flex-shrink:0}
+@media(max-width:700px){
+ .header .brand{width:min(245px,68vw);flex:0 1 245px}
+ footer .footer-brand{width:245px;max-width:80%}
+}
