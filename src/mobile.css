@@ -1,4 +1,9 @@
-/* Phone-only presentation. No declarations apply above 700px. */
+/* Hero controls and viewport coverage on phones and tablets only. */
+@media(max-width:1024px){
+ .hero.cinema-hero{min-height:100vh;min-height:100dvh}
+ .hero.cinema-hero .hero-actions{display:none}
+}
+/* Compact phone presentation. Desktop remains unchanged. */
 @media(max-width:700px){
  .section{padding:32px 6%}
  .section h2,.fleet h2{font-size:clamp(1.65rem,6.5vw,2.25rem);line-height:1.15;letter-spacing:-.025em;text-wrap:initial}
@@ -11,7 +16,7 @@
  .reveal{opacity:1;transform:none}
  .header{height:74px;padding-inline:6%}.header nav{top:74px}
  .brand{font-size:.78rem}.brand-mark{font-size:34px}.brand small{font-size:.55rem}
- .hero.cinema-hero{min-height:620px;min-height:90svh;padding:clamp(180px,27svh,260px) 6% 22px;gap:30px;justify-content:flex-end}
+ .hero.cinema-hero{min-height:100vh;min-height:100dvh;padding:clamp(180px,27svh,260px) 6% 22px;gap:30px;justify-content:flex-end}
  .hero.cinema-hero h1{font-size:clamp(1.9rem,8vw,2.6rem);line-height:1.1;letter-spacing:-.035em}
  .hero.cinema-hero h1>span{font-size:inherit}
  .cinema-content .eyebrow{font-size:.68rem;letter-spacing:.08em;max-width:none;margin-bottom:14px}
@@ -51,9 +56,8 @@
  .chart-axis{margin-right:86px;font-size:.75rem}.data-note,.project-note{font-size:.8125rem;line-height:1.5}
  .project-dashboard .data-note{margin-top:14px}
  .filters{margin-top:22px;margin-bottom:16px;gap:6px 16px}.filters button{font-size:.875rem;min-height:44px}
- .mobile-scroll-hint{font-size:.75rem;letter-spacing:.03em;color:var(--muted);margin:0 0 12px}
- .project-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;overscroll-behavior-x:contain}
- .project-card{flex:0 0 82%;min-width:0;scroll-snap-align:start}.project-image{aspect-ratio:16/10}
+ .project-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;overflow:visible;padding-bottom:0}
+ .project-card{min-width:0}.project-image{aspect-ratio:16/10}
  .project-caption{padding-top:12px}.project-caption h3{font-size:1.125rem;margin-top:4px}.project-caption small{font-size:.75rem}
  .project-caption>span{font-size:.875rem;padding-top:6px}.project-category{font-size:.7rem;padding:5px 10px}
  .project-note{margin-top:10px}
@@ -61,8 +65,8 @@
  .fleet-copy>p:not(.eyebrow){margin-top:14px}.fleet-summary{gap:12px;flex-wrap:nowrap;padding:18px 0}
  .fleet-summary>div{min-width:0;flex:1}.fleet-summary strong{font-size:2rem}.fleet-summary span{font-size:.8rem;line-height:1.4}.fleet-copy .data-note{font-size:.8125rem;margin-bottom:14px}
  .fleet .button{font-size:.9375rem;min-height:48px}
- .film-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;overscroll-behavior-x:contain}
- .film-card{flex:0 0 76%;min-width:0;scroll-snap-align:start}
+ .film-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:26px;overflow:visible;padding-bottom:0}
+ .film-card{min-width:0}
  .inline-film{aspect-ratio:4/5;max-height:360px;border-radius:4px;overflow:hidden}
  .film-caption{padding-top:10px}.film-caption h3{font-size:1.125rem}.film-caption small{font-size:.75rem}
  .inventory .section-heading{margin-bottom:0}.inventory .mobile-disclosure{margin-top:18px}

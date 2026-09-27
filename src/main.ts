@@ -114,7 +114,6 @@ function syncPhoneDetails(){
   const content=wrapper.querySelector('.mobile-disclosure-content')!;
   wrapper.replaceWith(...content.childNodes);
  });
- document.querySelectorAll('.mobile-scroll-hint').forEach(hint=>hint.remove());
  if(!phoneLayout.matches)return;
  const fold=(elements:Element[],label:string)=>{
   if(!elements.length)return;
@@ -133,13 +132,6 @@ function syncPhoneDetails(){
  fold([...document.querySelectorAll('.equipment-grid,.inventory>.source-detail')],'View All 11 Equipment Categories');
  fold([...document.querySelectorAll('.promise-grid')],'Why Work With Us');
  fold([...document.querySelectorAll('.enquiry')],'Send a Project Enquiry');
- for(const selector of ['.project-grid','.film-grid']){
-  const gallery=document.querySelector(selector)!;
-  const hint=document.createElement('p');
-  hint.className='mobile-scroll-hint';
-  hint.textContent=selector==='.project-grid'?'Swipe to explore projects →':'Swipe to see more films →';
-  gallery.before(hint);
- }
 }
 syncPhoneDetails();
 phoneLayout.addEventListener('change',syncPhoneDetails);
