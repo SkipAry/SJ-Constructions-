@@ -25,7 +25,7 @@
  .hero-actions .button{min-height:50px;padding:14px 18px;justify-content:space-between}
  .hero-secondary{min-height:44px;font-size:.9rem;border:0;gap:16px;min-width:0}
  .cinema-footer{margin-top:0;padding-top:14px}.cinema-footer strong{font-size:.82rem}
- .hero-cinema:after{background:linear-gradient(180deg,rgba(8,20,30,.28),rgba(8,20,30,.45) 25%,rgba(8,20,30,.9) 85%)}
+ .hero-cinema:after{background:linear-gradient(180deg,rgba(8,20,30,.2),rgba(8,20,30,.35) 25%,rgba(8,20,30,.75) 85%)}
  .intro-grid{gap:18px}.intro .button,.intro-copy .orange-line,.intro-copy h3{display:none}
  .intro-copy .text-link{margin-top:8px;font-size:.9375rem}
  .mobile-disclosure{border-top:1px solid #d7dfe8;border-bottom:1px solid #d7dfe8;margin-top:18px}
