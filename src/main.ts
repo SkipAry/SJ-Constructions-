@@ -127,7 +127,6 @@ function syncPhoneDetails(){
   content.append(...elements);
   wrapper.append(summary,content);
  };
- fold([...document.querySelectorAll('.intro-copy>p')].slice(1),'More About SJ Constructions');
  fold([...document.querySelectorAll('.project-table-wrap,.project-table-wrap+.data-note')],'Full Breakdown · 5 Projects');
  fold([...document.querySelectorAll('.equipment-grid,.inventory>.source-detail')],'View All 11 Equipment Categories');
  fold([...document.querySelectorAll('.promise-grid')],'Why Work With Us');
