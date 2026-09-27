@@ -17,3 +17,7 @@ The floating hero collage is replaced by a full-width muted background video fro
 ## Spacing and alignment audit
 
 Retain the current visual design and video navigation. Content sections use 48–72px vertical padding on desktop/tablet and 40px on phones, replacing the previous 95–130px desktop and 64px phone padding. Body line-height is 1.6, display headings 1.12–1.14. Section headings, intro columns and project captions align consistently; dashboard, inventory and team spacing follow a tighter rhythm. Body text stays at least 17px. Verified no page overflow at 320, 414, 768 and 1440px; production build passes.
+
+## Compact mobile presentation
+
+At widths up to 700px, `src/mobile.css` provides compact service rows, horizontally swipeable projects and films, a smaller hero headline positioned lower over the video, and two-column team figures. Native disclosures keep the full project table, equipment inventory, extra company information and enquiry form available on demand. The wrappers are removed above 700px so the desktop DOM and layout are restored. At 390px the default page is approximately 60% shorter than the previous version. Verified 320/375/430/700px with no page overflow, working disclosures, project filters/dialog, mobile navigation and editable enquiry fields. Desktop section heights match the previous production site at 1280px.
